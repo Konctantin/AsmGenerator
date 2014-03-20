@@ -1,0 +1,10 @@
+﻿<Application x:Class="AsmGenerator.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:sys="clr-namespace:System;assembly=mscorlib"
+             xmlns:fasm="clr-namespace:MemoryModule.FASM"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <ResourceDictionary Source="Themes/KamillaStyle.xaml" />
+    </Application.Resources>
+</Application>
