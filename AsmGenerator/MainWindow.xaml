@@ -18,6 +18,12 @@
             </ObjectDataProvider.MethodParameters>
         </ObjectDataProvider>
     </Window.Resources>
+    <Window.InputBindings>
+        <KeyBinding Command="Play" Key="F5" />
+    </Window.InputBindings>
+    <Window.CommandBindings>
+        <CommandBinding Command="Play" Executed="CommandBinding_Run_Executed" />
+    </Window.CommandBindings>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="25"/>
@@ -36,7 +42,7 @@
             <TextBlock Text=" Output mode: " VerticalAlignment="Center"/>
             <ComboBox Width="100" ItemsSource="{Binding Source={StaticResource OutputMode}}" x:Name="cbOutMode"/>
         </StackPanel>
-        <Button Grid.Row="2" x:Name="bCompile" Content="Compile (F5)" Click="bCompile_Click" />
+        <Button Grid.Row="2" x:Name="bCompile" Content="Compile (F5)" Command="Play" />
         <TextBox Grid.Row="1" FontFamily="Consolas" ScrollViewer.VerticalScrollBarVisibility="Visible" TextWrapping="Wrap" x:Name="tbInput" AcceptsReturn="True" />
         <TextBox Grid.Row="3" FontFamily="Consolas" ScrollViewer.VerticalScrollBarVisibility="Visible" TextWrapping="Wrap" x:Name="tbOutput" />
         <StatusBar Grid.Row="4">

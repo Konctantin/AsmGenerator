@@ -27,7 +27,7 @@ namespace MemoryModule.FASM
 
                 if (fasm_result.condition == FASM.FasmCondition.ERROR)
                     throw new Exception(string.Format("Fasm Syntax Error: {0}, at line {1}",
-                        fasm_result.error_code, fasm_result.error_data->line_number));
+                        fasm_result.error_code, fasm_result.error_data->line_number-1));
 
                 if (fasm_result.condition != FASM.FasmCondition.OK && fasm_result.condition != FASM.FasmCondition.ERROR)
                     throw new Exception(string.Format("Fasm Error: {0}", fasm_result.condition));

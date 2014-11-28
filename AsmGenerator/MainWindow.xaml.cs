@@ -22,10 +22,11 @@ namespace AsmGenerator
             cbOutMode.SelectedValue = OutputMode.Default;
         }
 
-        private void bCompile_Click(object sender, RoutedEventArgs e)
+        private void CommandBinding_Run_Executed(object sender, System.Windows.Input.ExecutedRoutedEventArgs e)
         {
             tbStatus.Foreground = baseColor;
- 
+            tbOutput.Clear();
+
             var str = "";
             if (cbMode.SelectedIndex > -1)
                 str += "use" + (int)(FasmMode)cbMode.SelectedValue + "\n";
@@ -54,7 +55,7 @@ namespace AsmGenerator
             }
             catch (Exception ex)
             {
-                tbStatus.Foreground = Brushes.Red; 
+                tbStatus.Foreground = Brushes.Red;
                 tbStatus.Text = ex.Message;
             }
         }
